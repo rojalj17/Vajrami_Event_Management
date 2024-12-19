@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME PAGE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Smooth transition for the carousel */
+    .carousel-item {
+      transition: transform 1s ease-in-out;
+    }
+  #servicesDropdown{
+    z-index: 10;
+  }
+  </style>
+</head>
+
+<body>
+
+  <nav class="bg-transparent ">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="text-lg font-bold text-black ">
+            <img class="inline-block w-20"  src="./Picsart_24-12-15_12-10-38-911.png" alt="logo">
+            <a href="./index.html">VAJRAMI</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="sm:hidden">
+          <button id="menuButton" class="text-gray-800 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation links -->
+        <div id="navLinks" class="hidden sm:flex space-x-4 text-sm">
+          <a href="./index.html" class="text-black hover:text-gray-700">HOME</a>
+          <a href="./about.html" class="text-black hover:text-gray-700">ABOUT</a>
+          <div class="relative">
+            <button id="servicesButton" class="text-black hover:text-gray-700 focus:outline-none">
+              SERVICES
+            </button>
+            <div id="servicesDropdown" class="absolute hidden bg-zinc-600 shadow-lg  mt-3 w-48">
+                <a href="./temple.html" class="block px-4 py-2 text-black hover:text-gray-700">Temple Wedding</a>
+                <a href="./beach.html" class="block px-4 py-2 text-black hover:text-gray-700">Beach Wedding</a>
+                <a href="./destination.html" class="block px-4 py-2 text-black hover:text-gray-700">Destination Wedding</a>
+                <a href="./intimate.html" class="block px-4 py-2 text-black hover:text-gray-700">Intimate Wedding</a>
+                <a href="./church.html" class="block px-4 py-2 text-black hover:text-gray-700">Church Wedding</a>
+                </div>
+          </div>
+          <a href="./gallery.html" class="text-black hover:text-gray-700">GALLERY</a>
+          <a href="./contact (1).html" class="text-black hover:text-gray-700">CONTACT</a>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden sm:hidden">
+        <a href="./index.html" class="block text-black hover:text-gray-700 px-4 py-2">Home</a>
+        <a href="./about.html" class="block text-black hover:text-gray-700 px-4 py-2">About</a>
+        <div class="relative">
+          <button id="mobileServicesButton" class="block w-full text-left px-4 py-2 text-black hover:text-gray-700 focus:outline-none">
+            Services
+          </button>
+          <div id="mobileServicesDropdown" class="hidden bg-transparent shadow-lg ">
+            <a href="./temple.html" class="block px-4 py-2 text-black hover:text-gray-700">Temple Wedding</a>
+            <a href="./beach.html" class="block px-4 py-2 text-black hover:text-gray-700">Beach Wedding</a>
+            <a href="./destination.html" class="block px-4 py-2 text-black hover:text-gray-700">Destination Wedding</a>
+            <a href="./intimate.html" class="block px-4 py-2 text-black hover:text-gray-700">Intimate Wedding</a>
+            <a href="./church.html" class="block px-4 py-2 text-black hover:text-gray-700">Church Wedding</a>
+          </div>
+        </div>
+        <a href="./contact (1).html" class="block text-black hover:text-gray-700 px-4 py-2">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const servicesButton = document.getElementById('servicesButton');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    const mobileServicesButton = document.getElementById('mobileServicesButton');
+    const mobileServicesDropdown = document.getElementById('mobileServicesDropdown');
+
+    // Toggle mobile menu
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Toggle dropdown menu for large screens
+    servicesButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      servicesDropdown.classList.toggle('hidden');
+    });
+
+    // Close dropdown menu if clicking outside
+    document.addEventListener('click', () => {
+      servicesDropdown.classList.add('hidden');
+    });
+
+    // Toggle dropdown menu for mobile
+    mobileServicesButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileServicesDropdown.classList.toggle('hidden');
+    });
+
+    // Close mobile dropdown menu if clicking outside
+    document.addEventListener('click', () => {
+      mobileServicesDropdown.classList.add('hidden');
+    });
+  </script>
+
+
+
+  <!-- Carousel Container -->
+  <section class="relative h-screen ">
+    <div id="carousel" class="relative h-full flex overflow-hidden ">
+      <!-- Slide 1 -->
+      <div class="carousel-item absolute inset-0 bg-cover bg-center"
+        style="background-image: url('https://partyslate.imgix.net/companies-cover-image/45550/image-00d2f98d-863e-4567-8598-d93f628113c0.jpg?ixlib=js-2.3.2&auto=compress%2Cformat&bg=fff');">
+        <div class="h-full w-full bg-black/50 flex items-center text-left text-white px-8">
+          <div class="max-w-xl ">
+            <h4 class="text-purple-400 text-sm uppercase mb-2 pl-20">Take a trip into paradise</h4>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 pl-20">
+              Partner with Vajrami Event Management in Kerala
+            </h1>
+            <p class="text-lg md:text-xl mb-6 pl-20">ISO 9001:2015 CERTIFIED COMPANY</p>
+            <div class="flex items-center space-x-4 pl-20">
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+            <!-- <button class="mt-6 bg-purple-500 text-white px-6 py-2 rounded-lg hover:bg-purple-400 ">
+              Contact Us
+            </button> -->
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item absolute inset-0 bg-cover bg-center"
+        style="background-image: url('https://shaadhiweddings.com/wp-content/uploads/2023/02/FEATURED-IMAGE_KP-min-1.jpg');">
+        <div class="h-full w-full bg-black/50 flex items-center text-left text-white px-8">
+          <div class="max-w-xl ">
+            <h4 class="text-purple-400 text-sm uppercase mb-2 pl-20">Take a trip into paradise</h4>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 pl-20">
+              Partner with Vajrami Event Management in Kerala
+            </h1>
+            <p class="text-lg md:text-xl mb-6 pl-20">ISO 9001:2015 CERTIFIED COMPANY</p>
+            <div class="flex items-center space-x-4 pl-20">
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+            <!-- <button class="mt-6 bg-purple-500 text-white px-6 py-2 rounded-lg hover:bg-purple-400 ">
+              Contact Us
+            </button> -->
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item absolute inset-0 bg-cover bg-center"
+        style="background-image: url('https://symphonyevents.com.au/wp-content/uploads/2023/07/aaf53f1c-11d1-4023-a479-0cb2b6cb3dfd.jpg');">
+        <div class="h-full w-full bg-black/50 flex items-center text-left text-white px-8">
+          <div class="max-w-xl ">
+            <h4 class="text-purple-400 text-sm uppercase mb-2 pl-20">Take a trip into paradise</h4>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 pl-20">
+              Partner with Vajrami Event Management in Kerala
+            </h1>
+            <p class="text-lg md:text-xl mb-6 pl-20">ISO 9001:2015 CERTIFIED COMPANY</p>
+            <div class="flex items-center space-x-4 pl-20">
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="#" class="text-white hover:text-purple-400 text-2xl">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+            <!-- <button class="mt-6 bg-purple-500 text-white px-6 py-2 rounded-lg hover:bg-purple-400 ">
+              Contact Us
+            </button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button id="prev"
+      class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600">
+      &#8592;
+    </button>
+    <button id="next"
+      class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600">
+      &#8594;
+    </button>
+
+    <script>
+      const slides = document.querySelectorAll(".carousel-item");
+      let currentIndex = 0;
+
+      const showSlide = (index) => {
+        slides.forEach((slide, i) => {
+          slide.style.transform = `translateX(${100 * (i - index)}%)`;
+        });
+      };
+
+      document.getElementById("prev").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      document.getElementById("next").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      // Initial Display
+      showSlide(currentIndex);
+    </script>
+
+  </section>
+
+
+  <!-- next section -->
+
+
+  <section class="bg-amber-50 py-10">
+    <div class="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center gap-8">
+      <!-- Text Content -->
+      <div class="lg:w-1/2 w-full">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-gray-900">
+          ISO 9001:2015 CERTIFIED EVENT MANAGEMENT COMPANY IN KERALA
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Have you ever dreamed of planning the perfect event that will be
+          remembered forever? Look no further than Vajrami® Events, the
+          top-notch event management company in Kerala, India, that has
+          everything you need to make your occasion an unforgettable
+          experience.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          We are passionate about transforming your visions into unforgettable events. As an ISO 9001:2015 certified
+          event management company, we uphold the highest standards of quality, professionalism, and creativity in every
+          project. From corporate events and conferences to weddings and private celebrations, we provide end-to-end
+          solutions tailored to your unique needs. Our experienced team ensures seamless planning, flawless execution,
+          and attention to every detail, creating memorable experiences that leave a lasting impression. With a
+          commitment to innovation and customer satisfaction, we aim to make your special moments stress-free,
+          enjoyable, and truly extraordinary. Let us bring your dream event to life!
+        </p>
+      </div>
+
+      <!-- Video Section -->
+      <div class="lg:w-1/2 w-full flex justify-center">
+        <div class="relative w-full h-65 lg:h-[300px]">
+          <!-- Embedded YouTube Video -->
+          <iframe class="w-full h-full rounded-lg shadow-lg" src="./media/video.mp4" title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- next section -->
+  <section class="bg-amber-50 px-8 py-12 ">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <!-- Left: Images Grid -->
+      <div class="grid grid-cols-2 gap-4">
+        <img
+          src="https://images.prismic.io/memoriesdesigner/81e956fa-a3f5-4397-b066-233bcef32ac8_6.png?auto=compress,format&rect=0,0,1499,1000&w=1000&h=667"
+          alt="Wedding Decor" class="rounded-lg shadow-md object-cover h-40 w-full">
+        <img src="https://images.wedmegood.com/wp-content/uploads/2020/10/IMG_0023.jpg" alt="Couple Photo"
+          class="rounded-lg shadow-md object-cover h-40 w-full">
+        <img src="https://www.christianwebhost.com/blog/wp-content/uploads/2019/05/christian-wedding-ceremony.jpeg"
+          alt="Red Decor" class="rounded-lg shadow-md object-cover h-40 w-full">
+        <img
+          src="https://www.theweddingschool.in/wp-content/uploads/elementor/thumbs/blog-69-1-pwe9t910raphjtgnvv9931kepv3ow9gq4pf35rukc0.jpg"
+          alt="Swing Decoration" class="rounded-lg shadow-md object-cover h-40 w-full">
+      </div>
+
+      <!-- Right: Text Content -->
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 pb-5">
+          UNLOCK YOUR DREAM DESTINATION WEDDING IN KERALA
+        </h2>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Choose Vajrami Event Management Company for your premium destination wedding in Kerala, India.
+          Whether you dream of a beach wedding in Kerala or a resort celebration, we will bring it to life, infusing
+          rich traditions.
+        </p>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          We also offer venue selection assistance for an easier planning process. Our track record includes clients
+          from India and abroad, making us your ideal partner for a dream destination wedding in Kerala, India.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex space-x-4">
+          <a href="#"
+            class="flex items-center px-4 py-2 bg-purple-600 text-white rounded-full shadow-md hover:bg-purple-700">
+            <span>💬</span> Talk to Expert
+          </a>
+          <a href="#"
+            class="flex items-center px-4 py-2 bg-green-500 text-white rounded-full shadow-md hover:bg-green-600">
+            <span>📱</span> Whatsapp us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- next section -->
+  <section class="relative min-h-screen flex items-center justify-center bg-cover bg-center "
+    style="background-image: url('https://plus.unsplash.com/premium_photo-1674252314872-093823e65cb9?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2VkZGluZyUyMHRhYmxlfGVufDB8fDB8fHww');">
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+      <!-- Left: Text Content -->
+      <div>
+        <p class="text-purple-400 text-sm mb-2 uppercase font-semibold">VAJRAMI EVENTS - AN ISO 9001:2015 CERTIFIED
+          COMPANY</p>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 text-gray-200">
+          Looking for the Most Creative & Innovative Event Planners in Kerala?
+        </h1>
+        <p class="text-lg text-gray-200 mb-6 leading-relaxed">
+          Imagine celebrating the most special events of your life without worrying about a single thing.
+          Melodia® Events is here to make your dream events come true! Our expert event management team
+          offers professional event planning and management services in cities, villages, and small towns
+          across Kerala, from south to north, using creative and innovative methods.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          Contact us today to bring your vision to life and create unforgettable memories!
+        </p>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="bg-opacity-60 p-6 rounded-lg shadow-lg">
+        <form action="#" method="POST" class="space-y-4">
+          <input type="text" placeholder="Enter your Full Name"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+          <input type="text" placeholder="Enter your Phone Number"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+          <input type="email" placeholder="Enter your Email ID"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+          <textarea placeholder="Message" rows="4"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+
+
+
+          <!-- Submit Button -->
+          <button type="submit"
+            class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+            SUBMIT
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="container mx-auto px-4 py-12">
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <p class="text-sm text-purple-600 font-semibold uppercase">Our Services</p>
+      <h2 class="text-3xl md:text-4xl font-bold mt-2">Services by Vajrami® Event Management</h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Vajrami® Event Management offers excellent, comprehensive event management services,
+        including personal event planning, corporate events, trade exhibitions, and much more.
+        Feel free to contact us!
+      </p>
+    </div>
+
+    <!-- Grid Layout -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://i.ytimg.com/vi/fAf_XpadCkk/maxresdefault.jpg" alt="Corporate Event Management"
+          class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-lg mb-2">Destination Wedding</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Celebrate your special day in paradise as you enjoy a luxurious destination wedding with us!
+
+          </p>
+          <a href="#" class="text-purple-600 font-semibold text-sm flex items-center">
+            Learn More <span class="ml-1">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://images.wedmegood.com/wp-content/uploads/2019/04/DSC_7267.jpg" alt="Wedding Planners"
+          class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-lg mb-2">Intimate Wedding</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Have you ever dreamed of planning the perfect wedding event to be remembered forever?
+          </p>
+          <a href="#" class="text-purple-600 font-semibold text-sm flex items-center">
+            Learn More <span class="ml-1">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://images.wedmegood.com/wp-content/uploads/2018/12/Moving-Pictures1.jpg"
+          alt="Destination Weddings" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-lg mb-2">Beach Wedding</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            If you want to make a statement at your next corporate event, partner with Melodia Event Management Company
+            in Kerala.
+          </p>
+          <a href="#" class="text-purple-600 font-semibold text-sm flex items-center">
+            Learn More <span class="ml-1">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img
+          src="https://livingwords.in/cdn/shop/articles/wedding_d02860e4-629e-471c-90b9-f39b4846fd73.jpg?v=1723108155"
+          alt="Beach Weddings" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-lg mb-2">Church Weddings</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Celebrate your love amidst the serene shores and palm-fringed beaches of Kerala.
+          </p>
+          <a href="#" class="text-purple-600 font-semibold text-sm flex items-center">
+            Learn More <span class="ml-1">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img
+          src="https://www.visionvivaah.com/blog/wp-content/uploads/2019/11/South-Indian-Wedding-Planners-In-Mumbai.jpg"
+          alt="Music & Entertainment" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-lg mb-2">Temple Wedding</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            From live bands and DJs to mesmerizing performers, we have everything you need.
+          </p>
+          <a href="#" class="text-purple-600 font-semibold text-sm flex items-center">
+            Learn More <span class="ml-1">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+
+  <!-- Client Testimonials Section -->
+  <section class="container mx-auto px-4 py-12">
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <p class="text-purple-600 uppercase font-semibold mb-2">Client Testimonials</p>
+      <h2 class="text-4xl font-bold">See What our Clients has to Say</h2>
+    </div>
+
+    <!-- Testimonial Carousel -->
+    <div class="relative flex items-center">
+
+
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
+        <!-- Testimonial Card 1 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 ">
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400">
+              <!-- Stars -->
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+
+          </div>
+          <p class="text-gray-600 mb-4">
+            In my point of view, best event management in Thrissur and very good wedding planner in Kerala.
+          </p>
+          <div class="flex items-center">
+            <div
+              class="h-10 w-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+              P</div>
+            <div class="ml-3">
+              <h4 class="font-semibold">PINDIYAN ANTONY</h4>
+              <p class="text-sm text-gray-400">2023-04-14</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 2 -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+
+          </div>
+          <p class="text-gray-600 mb-4">
+            Very good event management company in Kerala. We had a wedding last year. The wedding was wonderful in
+            Thrissur.
+          </p>
+          <div class="flex items-center">
+            <div
+              class="h-10 w-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg">S
+            </div>
+            <div class="ml-3">
+              <h4 class="font-semibold">Saleena Devassy</h4>
+              <p class="text-sm text-gray-400">2023-04-12</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 3 -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+
+          </div>
+          <p class="text-gray-600 mb-4">
+            Melodia Events is very good event management in Thrissur. My daughter's wedding was amazing with this
+            company.
+          </p>
+          <div class="flex items-center">
+            <div
+              class="h-10 w-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+              P</div>
+            <div class="ml-3">
+              <h4 class="font-semibold">Peter K P</h4>
+              <p class="text-sm text-gray-400">2023-04-09</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 4 -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+
+          </div>
+          <p class="text-gray-600 mb-4">
+            Our wedding day was like a dream come true, all thanks to the amazing team! They handled everything
+            seamlessly, and I could truly enjoy my special day stress-free.
+          </p>
+          <div class="flex items-center">
+            <div
+              class="h-10 w-10 bg-purple-600  text-white rounded-full flex items-center justify-center font-bold text-lg">
+              J</div>
+            <div class="ml-3">
+              <h4 class="font-semibold">Jane Smith</h4>
+              <p class="text-sm text-gray-400">2024-04-09</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 6 -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+
+          </div>
+          <p class="text-gray-600 mb-4">
+            "They took my vague ideas and turned them into a beautiful reality. My guests are still raving about the
+            decor and ambiance. Thank you for the unforgettable evening!"
+          </p>
+          <div class="flex items-center">
+            <div
+              class="h-10 w-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg">O
+            </div>
+            <div class="ml-3">
+              <h4 class="font-semibold">Olivia Davis</h4>
+              <p class="text-sm text-gray-400">2023-04-09</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 6 -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+
+          </div>
+          <p class="text-gray-600 mb-4">
+            "From the decorations to the catering, everything was impeccable. The team made the day stress-free and
+            enjoyable for everyone. A big thank you for making it unforgettable!" </p>
+          <div class="flex items-center">
+            <div
+              class="h-10 w-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+              I</div>
+            <div class="ml-3">
+              <h4 class="font-semibold">Isabella Anderson</h4>
+              <p class="text-sm text-gray-400">2021-09-09</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <footer class="bg-black text-white py-10">
+    <div class="container mx-auto px-4">
+  
+      <!-- Logo and Social Media Icons -->
+      <div class="text-center md:text-left mb-8">
+        <div class="flex items-center justify-left md:justify-center mb-4">
+          <img src="./Picsart_24-12-15_12-10-38-911.png" alt=" Logo" class="w-20">
+          <span class="ml-3 text-2xl font-bold">VAJRAMI</span>
+        </div>
+        <div class="flex justify-center md:justify-center space-x-4 mb-4">
+          <a href="https://www.facebook.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.twitter.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="text-sm leading-relaxed text-left md:text-center">
+          Planning a wedding has never been easier! VAJRAMI is an ISO 9001:2015 Certified wedding Management Company based in Kerala, India, offering various services to make your wedding stress-free and memorable. we've got it all covered.
+        </p>
+      </div>
+  
+      <!-- Footer Sections -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+  
+        <!-- Quick Links -->
+        <div>
+          <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+          <ul>
+            <li><a href="./index.html" class="text-sm hover:underline">Home</a></li>
+            <li><a href="./about.html" class="text-sm hover:underline">About</a></li>
+            <li><a href="./" class="text-sm hover:underline">Venues</a></li>
+            <li><a href="./gallery.html" class="text-sm hover:underline">Gallery</a></li>
+            <li><a href="./contact (1).html" class="text-sm hover:underline">Contact</a></li>
+          </ul>
+        </div>
+  
+        <!-- Services -->
+        <div>
+          <h3 class="font-bold text-lg mb-4">Services</h3>
+          <ul>
+            <li><a href="./temple.html" class="text-sm hover:underline">Temple Wedding</a></li>
+            <li><a href="./beach.html" class="text-sm hover:underline">Beach Wedding</a></li>
+            <li><a href="./destination.html" class="text-sm hover:underline">Destination Wedding</a></li>
+            <li><a href="./intimate.html" class="text-sm hover:underline">Intimate Wedding</a></li>
+            <li><a href="./church.html" class="text-sm hover:underline">Church Wedding</a></li>
+          </ul>
+        </div>
+  
+        <!-- Other Links -->
+        <div>
+          <h3 class="font-bold text-lg mb-4">Other Links</h3>
+          <ul>
+            <li><a href="#" class="text-sm hover:underline">Blog</a></li>
+            <li><a href="#" class="text-sm hover:underline">Testimonials</a></li>
+            <li><a href="#" class="text-sm hover:underline">Privacy Policy</a></li>
+            <li><a href="#" class="text-sm hover:underline">Terms of Service</a></li>
+          </ul>
+        </div>
+  
+        <!-- Contact Info -->
+        <div>
+          <h3 class="font-bold text-lg mb-4">Contact Info</h3>
+          <ul class="text-sm">
+            <li class="mb-2">VAJRAMI Wedding Management, T V Center, Kakkanad, Kochi, Kerala 682037</li>
+            <li class="mb-2">VAJRAMI Wedding Management, Flamon Complex, Main Rd, Kuriachira, Thrissur, Kerala 680006</li>
+            <li class="mb-2">VAJRAMI Wedding Management, Door No: VP 22/152ABC, Vazhakkad Panchayath, Oorkadav, Kerala 673640</li>
+          </ul>
+          <p class="mt-4">Phone: <a href="tel:+918590010011" class="hover:underline">+91-859-001-0011</a></p>
+          <p>Email: <a href="mailto:melodiaeventmanagement@gmail.com" class="hover:underline">vajramiwed@gmail.com</a></p>
+        </div>
+  
+      </div>
+  
+      <!-- Footer Bottom -->
+      <div class="mt-8 border-t border-gray-700 pt-4">
+        <div class=" justify-items-center text-sm">
+          <p>All Rights Reserved | VAJRAMI &copy; 2024</p>
+        </div>
+      </div>
+  
+    </div>
+  </footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+    <title>Kerala Beach Wedding</title>
+
+    <style>
+        body {
+            /* font-family: "Italiana"; */
+        }
+        #servicesDropdown{
+    z-index: 10;
+  }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- header -->
+    <nav class="bg-transparent ">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-4">
+            <!-- Logo -->
+            <div class="text-lg font-bold text-black ">
+                <img class="inline-block w-20"  src="./Picsart_24-12-15_12-10-38-911.png" alt="logo">
+                <a href="./index.html">VAJRAMI</a>
+            </div>
+    
+            <!-- Mobile menu button -->
+            <div class="sm:hidden">
+              <button id="menuButton" class="text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+              </button>
+            </div>
+    
+            <!-- Navigation links -->
+            <div id="navLinks" class="hidden sm:flex space-x-4 text-sm">
+              <a href="./index.html" class="text-black hover:text-gray-700">HOME</a>
+              <a href="./about.html" class="text-black hover:text-gray-700">ABOUT</a>
+              <div class="relative">
+                <button id="servicesButton" class="text-black hover:text-gray-700 focus:outline-none">
+                  SERVICES
+                </button>
+                <div id="servicesDropdown" class="absolute hidden bg-zinc-600 shadow-lg  mt-3 w-48">
+                    <a href="./temple.html" class="block px-4 py-2 text-black hover:text-gray-700">Temple Wedding</a>
+                    <a href="./beach.html" class="block px-4 py-2 text-black hover:text-gray-700">Beach Wedding</a>
+                    <a href="./destination.html" class="block px-4 py-2 text-black hover:text-gray-700">Destination Wedding</a>
+                    <a href="./intimate.html" class="block px-4 py-2 text-black hover:text-gray-700">Intimate Wedding</a>
+                    <a href="./church.html" class="block px-4 py-2 text-black hover:text-gray-700">Church Wedding</a>
+                    </div>
+              </div>
+              <a href="./gallery.html" class="text-black hover:text-gray-700">GALLERY</a>
+              <a href="./contact (1).html" class="text-black hover:text-gray-700">CONTACT</a>
+            </div>
+          </div>
+    
+          <!-- Mobile menu -->
+          <div id="mobileMenu" class="hidden sm:hidden">
+            <a href="./index.html" class="block text-black hover:text-gray-700 px-4 py-2">Home</a>
+            <a href="./about.html" class="block text-black hover:text-gray-700 px-4 py-2">About</a>
+            <div class="relative">
+              <button id="mobileServicesButton" class="block w-full text-left px-4 py-2 text-black hover:text-gray-700 focus:outline-none">
+                Services
+              </button>
+              <div id="mobileServicesDropdown" class="hidden bg-transparent shadow-lg ">
+                <a href="./temple.html" class="block px-4 py-2 text-black hover:text-gray-700">Temple Wedding</a>
+                <a href="./beach.html" class="block px-4 py-2 text-black hover:text-gray-700">Beach Wedding</a>
+                <a href="./destination.html" class="block px-4 py-2 text-black hover:text-gray-700">Destination Wedding</a>
+                <a href="./intimate.html" class="block px-4 py-2 text-black hover:text-gray-700">Intimate Wedding</a>
+                <a href="./church.html" class="block px-4 py-2 text-black hover:text-gray-700">Church Wedding</a>
+              </div>
+            </div>
+            <a href="./contact (1).html" class="block text-black hover:text-gray-700 px-4 py-2">Contact</a>
+          </div>
+        </div>
+      </nav>
+    
+      <script>
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const servicesButton = document.getElementById('servicesButton');
+        const servicesDropdown = document.getElementById('servicesDropdown');
+        const mobileServicesButton = document.getElementById('mobileServicesButton');
+        const mobileServicesDropdown = document.getElementById('mobileServicesDropdown');
+    
+        // Toggle mobile menu
+        menuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+    
+        // Toggle dropdown menu for large screens
+        servicesButton.addEventListener('click', (e) => {
+          e.stopPropagation();
+          servicesDropdown.classList.toggle('hidden');
+        });
+    
+        // Close dropdown menu if clicking outside
+        document.addEventListener('click', () => {
+          servicesDropdown.classList.add('hidden');
+        });
+    
+        // Toggle dropdown menu for mobile
+        mobileServicesButton.addEventListener('click', (e) => {
+          e.stopPropagation();
+          mobileServicesDropdown.classList.toggle('hidden');
+        });
+    
+        // Close mobile dropdown menu if clicking outside
+        document.addEventListener('click', () => {
+          mobileServicesDropdown.classList.add('hidden');
+        });
+      </script>
+    
+    <!-- Hero Section -->
+    <div class="relative bg-cover bg-fixed bg-center opacity-70 h:96 md:h-screen"
+        style="background-image: url(https://edenweddingplanner.com/wp-content/uploads/2024/02/Wedding-StRegis-Maldives-1024x576.jpg);">
+        <div class="absolute  bg-opacity-50"></div>
+        <div class="relative text-center text-white py-40 md:py-20 px-5">
+            <h1 class="text-xs md:text-4xl font-bold " style="margin-top: 200px;">Beach Wedding in Kerala, India</h1>
+            <!-- <p class="mt-5 text-lg">Contact us today to learn more about our services and how we can help you organize the top event management in Kerala.</p> -->
+        </div>
+    </div>
+    <div class="text-center py-10 bg-white">
+
+
+
+        <!-- FIRST AREA START -->
+        <section>
+            <div id="a">
+                <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+                    <div class="absolute inset-0 -z-10 overflow-hidden">
+                        <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+                            aria-hidden="true">
+                            <defs>
+                                <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%"
+                                    y="-1" patternUnits="userSpaceOnUse">
+                                    <path d="M100 200V.5M.5 .5H200" fill="none" />
+                                </pattern>
+                            </defs>
+                            <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+                                <path
+                                    d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+                                    stroke-width="0" />
+                            </svg>
+                            <rect width="100%" height="100%" stroke-width="0"
+                                fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+                        </svg>
+                    </div>
+                    <div
+                        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+                        <div
+                            class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+                            <div class="lg:pr-4">
+                                <div class="lg:max-w-lg">
+                                    <h1
+                                        class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                                        Sun-kissed vows on Kerala's sandy shores of India</h1>
+                                    <p class="mt-6 text-xl/8 text-gray-700">Kerala, in India, is a stunning destination
+                                        for beach wedding ceremonies, with its serene beaches and picturesque backwaters
+                                        providing the perfect backdrop for a memorable celebration. Let’s dive a little
+                                        deeper into the beach wedding planning services available in this beautiful
+                                        state of India.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+                            <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+                                src="https://media.cntraveler.com/photos/64baec3a93447f35378f3f23/3:2/w_2560%2Cc_limit/How%2520We%2520Pulled%2520It%2520Off-%2520Malaysia_Day3_img_0177.jpg"
+                                alt="">
+                        </div>
+                        <div
+                            class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+                            <div class="lg:pr-4">
+                                <div class="max-w-xl text-base/7 text-gray-700 lg:max-w-lg">
+
+                                    <ul role="list" class="mt-8 space-y-8 text-gray-600">
+                                        <li class="flex gap-x-3">
+
+                                            <path fill-rule="evenodd"
+                                                d="M5.5 17a4.5 4.5 0 0 1-1.44-8.765 4.5 4.5 0 0 1 8.302-3.046 3.5 3.5 0 0 1 4.504 4.272A4 4 0 0 1 15 17H5.5Zm3.75-2.75a.75.75 0 0 0 1.5 0V9.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0l-3.25 3.5a.75.75 0 1 0 1.1 1.02l1.95-2.1v4.59Z"
+                                                clip-rule="evenodd" />
+                                            </svg>
+                                            <span><strong class="font-semibold text-gray-900">Planning the
+                                                    wedding:</strong> A Indian wedding is an elaborate affair involving
+                                                a number of elements, including people, logistics, and events. It can be
+                                                extremely stressful without the help of a professional wedding planner.
+                                                Relax and enjoy your big day as you leave this complex task to Vajrami.
+                                                We are leading wedding planners in Kerala who specialise in all kinds of
+                                                arrangements. Whether it’s a traditional affair or a contemporary one,
+                                                we will identify the right kind of venue on the beach and arrange for
+                                                all decorations, photography, catering, and any other function you are
+                                                looking for.</span>
+                                        </li>
+                                        <li class="flex gap-x-3">
+
+                                            <path fill-rule="evenodd"
+                                                d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z"
+                                                clip-rule="evenodd" />
+                                            </svg>
+                                            <span><strong class="font-semibold text-gray-900">Decorations:</strong> A
+                                                beach wedding Planners in Kerala call for unique and creative
+                                                decorations that complement the natural beauty of the surroundings. From
+                                                floral arrangements to lighting and other decorative elements, there are
+                                                several decoration services available in Kerala that specialize in beach
+                                                weddings. These services can help create a stunning and romantic
+                                                atmosphere that sets the tone for your special day.</span>
+                                        </li>
+                                        <li class="flex gap-x-3">
+
+                                            <path
+                                                d="M4.632 3.533A2 2 0 0 1 6.577 2h6.846a2 2 0 0 1 1.945 1.533l1.976 8.234A3.489 3.489 0 0 0 16 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234Z" />
+                                            <path fill-rule="evenodd"
+                                                d="M4 13a2 2 0 1 0 0 4h12a2 2 0 1 0 0-4H4Zm11.24 2a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V15Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75h-.01Z"
+                                                clip-rule="evenodd" />
+                                            </svg>
+                                            <span><strong class="font-semibold text-gray-900">Catering:</strong>Kerala
+                                                is known for its delicious cuisine, and no beach wedding in Kerala is
+                                                complete without a feast that showcases the state’s culinary delights.
+                                                Vajrami’s catering services in Kerala specialize in local cuisine and
+                                                can provide a range of menu options, including vegetarian and
+                                                non-vegetarian dishes. From traditional Kerala dishes to global cuisine,
+                                                there’s something for every palate.</span>
+                                        </li>
+                                        <li class="flex gap-x-3">
+
+                                            <path fill-rule="evenodd"
+                                                d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z"
+                                                clip-rule="evenodd" />
+                                            </svg>
+                                            <span><strong class="font-semibold text-gray-900">Photos and
+                                                    videos:</strong> One of the most important aspects of a wedding is
+                                                capturing these precious moments on a platform so that you can reminisce
+                                                and be happy. Vajrami conducts professional video and photo shoots to
+                                                capture the romance of your special day and prepare a creative
+                                                presentation as a ‘forever memory, immortalising every moment.</span>
+                                        </li>
+
+                                        <li class="flex gap-x-3">
+
+                                            <path fill-rule="evenodd"
+                                                d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z"
+                                                clip-rule="evenodd" />
+                                            </svg>
+                                            <span><strong class="font-semibold text-gray-900">Identifying the
+                                                    venue:</strong>As mentioned before, we are comprehensive planners
+                                                who take care of every aspect of your event. Kerala is a beautiful
+                                                region full of panoramic views and a beach with blue waters. At your
+                                                request, we can also book one of the wonderful beach resorts and host a
+                                                wedding right there on the soft sand, making it a memorable day.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!-- FIRST AREA END -->
+
+
+
+        <!-- SECOND AREA START -->
+        <section>
+            <div class=" my-20 md:grid grid-cols-2 ">
+                <div>
+
+                    <div class="md:grid  grid-cols-2 ms-5 gap-2 rounded-lg">
+                        <img src="https://luxaus.au/wp-content/uploads/2023/03/kerala-1024x683.jpeg.webp" alt="no image"
+                            class="w-full h-full rounded-lg">
+                        <img src="https://aarohamresorts.com/wp-content/uploads/2023/09/Indian-Wedding-Couple-Portrait-The-Fern-Hotels-and-Resorts-1024x683-1.jpg"
+                            alt="no image" class="w-full h-full rounded-lg">
+                    </div>
+                    <div class="md:grid  grid-cols-3 ms-5 gap-2 mt-2">
+                        <img src="https://images.squarespace-cdn.com/content/v1/52ed3507e4b041396187d22b/beed310a-6fce-4d12-93da-ca2eb8e702bc/Zuri+Goa+Destination+Wedding84.jpg?format=1000w"
+                            alt="no image" class="w-full h-full rounded-lg">
+                        <img src="https://i0.wp.com/shaadiwish.com/blog/wp-content/uploads/2021/11/destination-wedding-in-Kerala.jpg"
+                            alt="no image" class="w-full h-full rounded-lg">
+                        <img src="https://allaboutwedding.in/wp-content/uploads/2020/08/blog.jpg" alt="no image"
+                            class="w-full h-full rounded-lg">
+
+                    </div>
+                </div>
+                <div class="md:px-40 px-10 ">
+                    <div class="flex justify-center items-center flex-col my-10">
+                        <center>
+                            <h1 class="text-3xl md:text-5xl text-gray-600">Moments</h1>
+                        </center>
+                        <!-- <div class="w-40 h-1 bg-gray-500 "></div> -->
+                    </div>
+                    <div class="text-center md:text-left space-y-4">
+                        <center>
+                            <div class="w-40 h-40 mx-auto md:mx-20 bg-cover rounded-full "
+                                style="background-image: url('https://images.squarespace-cdn.com/content/v1/52ed3507e4b041396187d22b/1666777517628-5ESE6T2UCB9KKCC51QJR/Goa+Destination+Wedding.jpg?format=750w');">
+                            </div>
+                        </center>
+                        <center>
+                            <h2 class="text-lg md:text-2xl font-bold">We preserve moments in time.</h2>
+                        </center>
+                        <center>
+                            <p class="text-xs md:text-xl text-gray-600 italic">"Don’t miss this beach heaven…."</p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!-- SECOND SECTION END -->
+
+        <!-- SERVICE SECTION -->
+
+        <div class="bg-white-50">
+            <div class="container p-2">
+                <h2 class=" text-center font-bold text-2xl md:text-4xl text-gray-600 mb-5 " style=" margin-top: 100px;">
+                    Different Services for Beach Wedding</h2>
+                <div class="text-gray-800"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-10">
+
+                    <!-- Wedding Design and Styling -->
+                    <div class="text-center">
+                        <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-200">
+                            <img src="https://www.hamaraevent.com/lib/js/kcfinder/upload/images/image4%282%29.jpeg"
+                                alt="Wedding Design and Styling" class="w-full h-full object-cover">
+                        </div>
+                        <h2 class="mt-6 text-lg font-semibold text-gray-800">Wedding Design and Styling</h2>
+                        <p class="mt-4 ms-5 me-5 text-gray-600 text-justify text-xs md:text-lg">
+                            Our team of expert designers will work with you to create a wedding design that is both
+                            elegant
+                            and timeless. We will ensure that every detail is perfect, from the floral arrangements to
+                            the
+                            table settings. Your wedding day will be a reflection of your style and personality.
+                        </p>
+                    </div>
+                    <!-- Wedding Venue Selection -->
+                    <div class="text-center">
+                        <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-200">
+                            <img src="https://shaadiwish.com/blog/wp-content/uploads/2018/08/kerala2.jpg"
+                                alt="Wedding Venue Selection" class="w-full h-full object-cover">
+                        </div>
+                        <h2 class="mt-6 text-lg font-semibold text-gray-800">Wedding Venue Selection</h2>
+                        <p class="mt-4 ms-5 me-5 text-justify text-gray-600 text-xs md:text-lg">
+                            Our team of expert designers will work with you to create a wedding design that is both
+                            elegant
+                            and timeless. We will ensure that every detail is perfect, from the floral arrangements to
+                            the
+                            table settings. Your wedding day will be a reflection of your style and personality.
+                        </p>
+                    </div>
+
+                    <!-- Wedding Day Management -->
+                    <div class="text-center">
+                        <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-gray-200">
+                            <img src="https://www.visionvivaah.com/blog/wp-content/uploads/2019/08/Top-wedding-destination-places-in-Goa-1024x683.jpg"
+                                alt="Wedding Day Management" class="w-full h-full object-cover">
+                        </div>
+                        <h2 class="mt-6 text-lg font-semibold text-gray-800">Wedding Day Management</h2>
+                        <p class="mt-4 ms-5 me-5 text-justify text-gray-600 text-xs md:text-lg">
+                            On your wedding day, our team will be there to ensure that everything runs smoothly. We will
+                            manage all the details, from coordinating with vendors to handling last-minute issues. You
+                            can
+                            relax and enjoy your special day knowing that everything is taken care of.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- SERVICE SECTION END -->
+
+        <div class="mt-5">
+            <h2 class="mx-5 my-5 font-bold text-2xl md:text-4xl text-gray-400">Why Kerala is the best place for a beach
+                wedding in India</h2>
+            <p class="mx-5 my-5 text-xs md:text-lg">Kerala, a southern state in India, is a completely picturesque
+                destination. It is adorned with lush greenery and coconut trees, making it an idyllic event destination
+                for your dream wedding events. The entire state is a lush canvas of green landscapes, creating an
+                enchanting atmosphere in all areas of the state. The Kerala state government is actively promoting
+                destination weddings, with Kerala Public Works Department and Tourism Department Minister Muhammed Riyas
+                recently encouraging tourism in this direction.</p>
+
+            <p class="mx-5 my-5 text-xs md:text-lg">Benefiting from a tropical climate throughout the year, Kerala is an
+                ideal choice for wedding events, even during the monsoon season. With a vast coastal area, Kerala offers
+                an abundance of venues for your special day. The state’s higher education level and literacy rates
+                ensure local expertise, streamlining the event planning process.</p>
+
+            <p class="mx-5 my-5 text-xs md:text-lg">Geographically diverse, Kerala transitions seamlessly from
+                captivating coastlines to elevated hill stations like Munnar and Wayanad. The renowned backwaters, a
+                unique Kerala specialty, provide a captivating backdrop for various wedding ceremonies.</p>
+
+            <h4 class="mx-5 my-5 font-bold text-2xl md:text-4xl text-gray-400">Conclusion: A Serene Affair by Vajrami
+                weddings</h4>
+            <p class="mx-5 my-5 text-xs md:text-lg">In the picturesque realm of Kerala’s sandy shores, Vajrami Events
+                orchestrates dream beach weddings, ensuring every detail is seamlessly handled.
+                From venue selection and creative decorations to delectable catering and
+                captivating photo shoots, vajrami transforms every ceremony into an
+                unforgettable, stress-free celebration.</p>
+        </div>
+        <hr>
+
+
+        <!-- LAST AREA START -->
+
+        <section class="py-12 px-6 bg-white">
+            <div class="max-w-7xl mx-auto text-center mb-10">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-500 mb-3">BLOG POSTS</h2>
+                <p class="text-gray-500">Adventuring + traveling to capture all of the moments</p>
+            </div>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+                <!-- Card1 -->
+                <div class="relative group">
+                    <img src="https://theplannersvn.com/wp-content/uploads/2022/10/CANR2984.jpg" alt="Blog Post 1"
+                        class="w-full h-48 object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-lg">
+                        <h3 class="text-white text-lg font-semibold">DOLLY SODS - THOMAS, CAROLINE</h3>
+                    </div>
+                </div>
+
+                <!-- Card2 -->
+                <div class="relative group">
+                    <img src="https://images-pw.pixieset.com/page/4648363/NN-20200213-WeddingTra-0808-d70d4a72.jpg"
+                        alt="Blog Post 2" class="w-full h-48 object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-lg">
+                        <h3 class="text-white text-lg font-semibold">COLORADO PORTRAIT - LILY</h3>
+                    </div>
+                </div>
+
+                <!-- Card3 -->
+                <div class="relative group">
+                    <img src="https://opendigest.in/wp-content/uploads/2023/11/Destination-wedding-.jpg"
+                        alt="Blog Post 3" class="w-full h-48 object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-lg">
+                        <h3 class="text-white text-lg font-semibold">PRIVATE CEREMONY - LATER</h3>
+                    </div>
+                </div>
+
+                <!-- Card4 -->
+                <div class="relative group">
+                    <img src="https://paradiseweddings.com/blog/wp-content/uploads/2023/03/dulha-dulhan-package-at-dreams-jade-cancun.jpg"
+                        alt="Blog Post 4" class="w-full h-48 object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-lg">
+                        <h3 class="text-white text-lg font-semibold">6 WAYS TO MAKE YOUR DAY SPECIAL</h3>
+                    </div>
+                </div>
+
+                <!-- Card5 -->
+                <div class="relative group">
+                    <img src=https://www.diwas.in/wp-content/uploads/2017/10/Beach-Wedding.jpg" alt="Blog Post 5"
+                        class="w-full h-48 object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-lg">
+                        <h3 class="text-white text-lg font-semibold">SOLOMON'S ISLAND - WEDDING</h3>
+                    </div>
+                </div>
+
+                <!-- Card6 -->
+                <div class="relative group">
+                    <img src="https://eventsmanagementkerala.com/wp-content/uploads/2023/10/beach-wedding-stage-decoration-kerala-1024x689.webp"
+                        alt="Blog Post 6" class="w-full h-48 object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-lg">
+                        <h3 class="text-white text-lg font-semibold">ELOPEMENTS, WEDDINGS AND COVERS</h3>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <hr>
+        <!-- LAST AREA END -->
+        <footer class="bg-black text-white py-10">
+            <div class="container mx-auto px-4">
+          
+              <!-- Logo and Social Media Icons -->
+              <div class="text-center md:text-left mb-8">
+                <div class="flex items-center justify-left md:justify-center mb-4">
+                  <img src="./Picsart_24-12-15_12-10-38-911.png" alt=" Logo" class="w-20">
+                  <span class="ml-3 text-2xl font-bold">VAJRAMI</span>
+                </div>
+                <div class="flex justify-center md:justify-center space-x-4 mb-4">
+                  <a href="https://www.facebook.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.youtube.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                  <a href="https://www.linkedin.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.twitter.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="text-sm leading-relaxed text-left md:text-center">
+                  Planning a wedding has never been easier! VAJRAMI is an ISO 9001:2015 Certified wedding Management Company based in Kerala, India, offering various services to make your wedding stress-free and memorable. we've got it all covered.
+                </p>
+              </div>
+          
+              <!-- Footer Sections -->
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          
+                <!-- Quick Links -->
+                <div>
+                  <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                  <ul>
+                    <li><a href="./index.html" class="text-sm hover:underline">Home</a></li>
+                    <li><a href="./about.html" class="text-sm hover:underline">About</a></li>
+                    <li><a href="./" class="text-sm hover:underline">Venues</a></li>
+                    <li><a href="./galley.html" class="text-sm hover:underline">Gallery</a></li>
+                    <li><a href="./contact (1).html" class="text-sm hover:underline">Contact</a></li>
+                  </ul>
+                </div>
+          
+                <!-- Services -->
+                <div>
+                  <h3 class="font-bold text-lg mb-4">Services</h3>
+                  <ul>
+                    <li><a href="./temple.html" class="text-sm hover:underline">Temple Wedding</a></li>
+                    <li><a href="./beach.html" class="text-sm hover:underline">Beach Wedding</a></li>
+                    <li><a href="./destination.html" class="text-sm hover:underline">Destination Wedding</a></li>
+                    <li><a href="./intimate.html" class="text-sm hover:underline">Intimate Wedding</a></li>
+                    <li><a href="./church.html" class="text-sm hover:underline">Church Wedding</a></li>
+                  </ul>
+                </div>
+          
+                <!-- Other Links -->
+                <div>
+                  <h3 class="font-bold text-lg mb-4">Other Links</h3>
+                  <ul>
+                    <li><a href="#" class="text-sm hover:underline">Blog</a></li>
+                    <li><a href="#" class="text-sm hover:underline">Testimonials</a></li>
+                    <li><a href="#" class="text-sm hover:underline">Privacy Policy</a></li>
+                    <li><a href="#" class="text-sm hover:underline">Terms of Service</a></li>
+                  </ul>
+                </div>
+          
+                <!-- Contact Info -->
+                <div>
+                  <h3 class="font-bold text-lg mb-4">Contact Info</h3>
+                  <ul class="text-sm">
+                    <li class="mb-2">VAJRAMI Wedding Management, T V Center, Kakkanad, Kochi, Kerala 682037</li>
+                    <li class="mb-2">VAJRAMI Wedding Management, Flamon Complex, Main Rd, Kuriachira, Thrissur, Kerala 680006</li>
+                    <li class="mb-2">VAJRAMI Wedding Management, Door No: VP 22/152ABC, Vazhakkad Panchayath, Oorkadav, Kerala 673640</li>
+                  </ul>
+                  <p class="mt-4">Phone: <a href="tel:+918590010011" class="hover:underline">+91-859-001-0011</a></p>
+                  <p>Email: <a href="mailto:melodiaeventmanagement@gmail.com" class="hover:underline">vajramiwed@gmail.com</a></p>
+                </div>
+          
+              </div>
+          
+              <!-- Footer Bottom -->
+              <div class="mt-8 border-t border-gray-700 pt-4">
+                <div class=" justify-items-center text-sm">
+                  <p>All Rights Reserved | VAJRAMI &copy; 2024</p>
+                </div>
+              </div>
+          
+            </div>
+          </footer>
+        
+</body>
+
+</html>
